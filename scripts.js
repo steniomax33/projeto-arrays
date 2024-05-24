@@ -1,6 +1,7 @@
 const list = document.querySelector('ul')
 const buttonShowAll = document.querySelector('.show-all')
 const buttonMapAll = document.querySelector('.map-all')
+const buttonSumAll = document.querySelector('.sum-all')
 
 function showAll(productsArray) {
     let myLi = ''
@@ -29,5 +30,18 @@ function mapAllItems() {
     showAll(newPrice)
 }
 
+function sumAllItems() {
+    const totalValue = menuOptions.reduce((acc, curr) => acc + curr.price, 0)
+
+    list.innerHTML = `
+        <li>
+            <p>O valor total dos itens é R$ ${totalValue}</p>
+        </li>
+    
+    `
+    console.log(totalValue)
+}
+
 buttonShowAll.addEventListener('click', () => showAll(menuOptions))
 buttonMapAll.addEventListener('click', mapAllItems)
+buttonSumAll.addEventListener('click', sumAllItems)
