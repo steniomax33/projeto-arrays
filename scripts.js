@@ -1,7 +1,8 @@
 const list = document.querySelector('ul')
 const buttonShowAll = document.querySelector('.show-all')
 const buttonMapAll = document.querySelector('.map-all')
-const buttonSumAll = document.querySelector('.sum-all')
+const sumAll = document.querySelector('.sum-all')
+
 
 function showAll(productsArray) {
     let myLi = ''
@@ -39,9 +40,9 @@ function sumAllItems() {
         </li>
     
     `
-    console.log(totalValue)
+    showAll(totalValue)
 }
 
 buttonShowAll.addEventListener('click', () => showAll(menuOptions))
 buttonMapAll.addEventListener('click', mapAllItems)
-buttonSumAll.addEventListener('click', sumAllItems)
+sumAll.addEventListener('click', sumAllItems)
