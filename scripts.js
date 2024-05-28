@@ -2,7 +2,7 @@ const list = document.querySelector('ul')
 const buttonShowAll = document.querySelector('.show-all')
 const buttonMapAll = document.querySelector('.map-all')
 const sumAll = document.querySelector('.sum-all')
-
+const filterAll = document.querySelector('.filter-all')
 
 function showAll(productsArray) {
     let myLi = ''
@@ -40,9 +40,15 @@ function sumAllItems() {
         </li>
     
     `
-    showAll(totalValue)
+}
+
+function filterAllItems() {
+    const filterJustVegan = menuOptions.filter((product) => product.vegan)
+
+    showAll(filterJustVegan)
 }
 
 buttonShowAll.addEventListener('click', () => showAll(menuOptions))
 buttonMapAll.addEventListener('click', mapAllItems)
 sumAll.addEventListener('click', sumAllItems)
+filterAll.addEventListener('click', filterAllItems)
